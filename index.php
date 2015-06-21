@@ -1,22 +1,9 @@
 <?php
-require_once "php/database_connect.php";
 require_once "php/user.php";
-// $weight = $_POST["weight"];
-// $height = $_POST["height"];
 $userIP = $_SERVER['REMOTE_ADDR'];
-$databaseConnectionConfirmation = '';
-if (mysql_ping() == 0) {
-    $databaseConnectionConfirmation = mysql_error();
-} else {
-    $databaseConnectionConfirmation = 'You have successfully connected to the database.';
-}
 $currentUser = new User();
 $currentUser->setWeight($_POST["weight"]);
 $currentUser->setHeight($_POST["height"]);
-// $currentUser->setWeight($weight);
-// $currentUser->setHeight($height);
-// $calculation = $currentUser->BMICalculator();
-mysql_close();
 ?>
 
 <!DOCTYPE html>
@@ -25,7 +12,7 @@ mysql_close();
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>BODY MASS INDEX CALCULATOR</title>
+    <title>Body Mass Index Calculator</title>
 
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
@@ -39,7 +26,7 @@ mysql_close();
 </head>
 <body>
 <div class="text-center">
-    <h1>BODY MASS INDEX CALCULATOR</h1>
+    <h1>Body Mass Index Calculator</h1>
 
     <div class="container">
         <div class="col-md-offset-4 col-md-4">
